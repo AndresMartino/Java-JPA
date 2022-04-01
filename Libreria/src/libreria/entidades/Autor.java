@@ -15,9 +15,7 @@ public class Autor implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    @Column(length=255, nullable=false)
     private String nombre;
-     @Column(nullable=false)
     private Boolean alta;
 
     public Autor() {

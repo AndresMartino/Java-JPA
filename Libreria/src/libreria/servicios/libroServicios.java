@@ -8,6 +8,6 @@ package libreria.servicios;
  *
  * @author andrelo
  */
-public class libroServicios {
+public class LibroServicios {
     
 }

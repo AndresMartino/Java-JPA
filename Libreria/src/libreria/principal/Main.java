@@ -3,10 +3,18 @@ package libreria.principal;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 import libreria.entidades.Editorial;
+import libreria.servicios.AutorServicios;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
+        
+        
+        AutorServicios autorServicios =new AutorServicios();
+        autorServicios.crear();
+        
+        
+        /*
         EntityManager en =Persistence
                           .createEntityManagerFactory("LIBRERIAPU")
                           .createEntityManager();
@@ -17,7 +25,7 @@ public class Main {
         ed.setNombre("Alba");
         ed.setAlta(false);
         en.persist(ed);
-        en.getTransaction().commit();
+        en.getTransaction().commit();*/
     }
     
 }

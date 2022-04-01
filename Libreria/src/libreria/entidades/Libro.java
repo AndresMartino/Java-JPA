@@ -1,13 +1,13 @@
 package libreria.entidades;
 
 import java.io.Serializable;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+
+import javax.persistence.ManyToOne;
 
 
 @Entity
@@ -15,23 +15,16 @@ public class Libro implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long isbn;
-    @Column(length= 255,nullable = false )
     private String titulo;
-    @Column(nullable = false)
     private Integer anio;
-    @Column(nullable = false)
     private Integer ejemplares;
-    @Column(nullable = false)
     private Integer ejemplaresPrestados;
-    @Column(nullable = false)
     private Integer ejemplaresRestantes;
-    @Column(nullable = false)
     private boolean alta;
-    @Column(nullable = false)
     
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER)
     private Autor autor;
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER)
     private Editorial editorial;
 
     public Libro() {
